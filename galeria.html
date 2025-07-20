@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería - Mi Galería</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="bg-danger text-white text-center py-3">
+    <h1>Galería</h1>
+    <nav>
+      <ul class="nav justify-content-center">
+        <li class="nav-item"><a class="nav-link text-white" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="galeria.html">Galería</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="nosotros.html">Sobre Nosotros</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container my-5">
+    <h2 class="text-center">Galería Completa</h2>
+    <div class="d-flex justify-content-center mb-3">
+      <button class="btn btn-danger mx-2" onclick="filtrarCategoria('naturaleza')">Naturaleza</button>
+      <button class="btn btn-danger mx-2" onclick="filtrarCategoria('arte')">Arte</button>
+      <button class="btn btn-danger mx-2" onclick="filtrarCategoria('todo')">Mostrar Todo</button>
+    </div>
+
+    <div class="row" id="contenedor-imagenes">
+      <div class="col-md-4 naturaleza">
+        <img src="assets/images/naturaleza1.jpg" class="img-fluid rounded shadow" 
+             onclick="verDetalle('naturaleza1.jpg', 'Naturaleza', 'Paisaje de Árbol.')">
+      </div>
+      <div class="col-md-4 naturaleza">
+        <img src="assets/images/naturaleza2.jpg" class="img-fluid rounded shadow" 
+             onclick="verDetalle('naturaleza2.jpg', 'Naturaleza', 'Paisaje de Arroyo.')">
+      </div>
+      <div class="col-md-4 naturaleza">
+        <img src="assets/images/naturaleza3.jpg" class="img-fluid rounded shadow" 
+             onclick="verDetalle('naturaleza3.jpg', 'Naturaleza', 'Paisaje de Cascada.')">
+      </div>
+      <div class="col-md-4 arte">
+        <img src="assets/images/arte1.jpg" class="img-fluid rounded shadow" 
+             onclick="verDetalle('arte1.jpg', 'Arte', 'El Grito.')">
+      </div>
+      <div class="col-md-4 arte">
+        <img src="assets/images/arte2.jpg" class="img-fluid rounded shadow" 
+             onclick="verDetalle('arte2.jpg', 'Arte', 'La Monalisa.')">
+      </div>
+      <div class="col-md-4 arte">
+        <img src="assets/images/arte3.jpg" class="img-fluid rounded shadow" 
+             onclick="verDetalle('arte3.jpg', 'Arte', 'La Última Cena.')">
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-3">
+    <p>&copy;Realizado por Andres Moreno Pedraza y Johan Sebastián Cardenas</p>
+  </footer>
+
+  <div class="modal fade" id="detalleModal" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detalleModalLabel">Título de la Imagen</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img id="modalImagen" src="" alt="Detalle" class="img-fluid rounded shadow mb-3">
+          <p id="modalDescripcion"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
